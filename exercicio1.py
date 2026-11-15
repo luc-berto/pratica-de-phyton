@@ -1,18 +1,13 @@
-numero = [0]* 5
+contagem = {}
+numero = [2, 5, 2, 8, 5, 2, 10, 8, 5, 5]
 
-pares = 0
-impares = 0
+for i in range(len(numero)):
+    atual = numero[i]
 
-for i in range(5):
-    numero[i] = int(input("Digite um numero:"))
-
-print("Numeros pares:", end=" ,")
-for i in range(5):
-    if numero[i] % 2 == 0:
-        pares+= numero[i]
-        print(numero[i], end=" ,")
+    if atual in contagem:
+        contagem[atual] += 1
     else:
-        impares += 1
+        contagem[atual] = 1
 
-print("\nQuantidade de numeros impares: "+str(impares))
-print("Soma dos numero pares: "+str(pares))
+for numero, quantidade in contagem.items():
+    print(numero,quantidade)
